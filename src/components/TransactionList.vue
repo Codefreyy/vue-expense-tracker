@@ -1,6 +1,6 @@
 <template>
   <h3>History</h3>
-  <ul id="list" class="list">
+  <ul id="list" class="list" v-if="transactions.length">
     <li
       v-for="transaction in transactions"
       :key="transaction.key"
@@ -12,6 +12,7 @@
       </button>
     </li>
   </ul>
+  <p v-else>No transactions yet.</p>
 </template>
 >
 
@@ -24,6 +25,7 @@ const props = defineProps({
   transactions: {
     type: Array,
     required: true,
+    default: () => [],
   },
 })
 

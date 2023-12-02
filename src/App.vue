@@ -66,6 +66,8 @@ const transactionDataSubmitted = (data) => {
   })
   saveTransactionToLocalStorage()
   toast.success("Transaction Added.")
+
+  console.log("transaction", transactions.value)
 }
 
 const deleteTransaction = (id) => {
